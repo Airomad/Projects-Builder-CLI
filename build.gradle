@@ -1,0 +1,30 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+  mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+mainClassName = 'me.airomad.projects_builder_cli.Launcher'
+jar {
+    baseName = 'Projects-Builder-CLI'
+}
+
+dependencies {
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+}
